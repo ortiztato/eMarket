@@ -1,41 +1,42 @@
 {% extends "auctions/layout.html" %}
 
-{% load static %}
 
 {% block body %}
-<div class="container-sm" style="justify-content: center">
-    <div class="col mx-auto">
+<section id="secauction">
+    <div class="containerauction">
         <h2>{{ auction.title }}</h2>
     
         <hr>
             {% if auction.image %}
-                <div>
-                <img src="{{ auction.image }}" alt="{{ auction.title }}" height="300" style="display: block; margin-left: auto;
-                margin-right: auto;">
+                <div class="divimageauction">
+                <img src="{{ auction.image }}" alt="{{ auction.title }}">
                 </div>
             {% endif %}                 
-        <div class="mt-1">
+        <div id="auctiondescription">
             Description: {{ auction.description }}
         </div>
-        <div>
+        <div id="auctioncategory">
             Category: {{ auction.category }}
         </div>
-        <div>
+        <div id="auctioninitbid">
             Initial Bid: $ {{ auction.initialbid}}
         </div>
-        <div>
-            <strong>Current Bid: $ {{ auction.price}}</strong>
+        <div id="auctionprice">
+            Current Bid: $ {{ auction.price}}
         </div>
-
         <hr>
-
         {% if watch %}
-        <div style="margin-top: 10px; margin-bottom: 20px;"> 
-            <a href="{% url 'changewatch' auction.title %}">Remove from Watchlist</a>
+        <div class="watchlist"> 
+            <button>
+                <a href="{% url 'changewatch' auction.title %}">Remove from Watchlist</a>
+            </button>
+            
         </div>
         {% else %}
-        <div style="margin-top: 10px; margin-bottom: 20px"> 
-            <a href="{% url 'changewatch' auction.title %}">Add to Watchlist</a>
+        <div class="watchlist"> 
+            <button>
+                <a href="{% url 'changewatch' auction.title %}">Add to Watchlist</a>
+            </button>
         </div>
         {% endif %}
 
@@ -100,7 +101,7 @@
 
     </div>
 
-</div>
+</section>
     
 
     
