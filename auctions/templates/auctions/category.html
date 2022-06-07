@@ -1,0 +1,26 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Auctions for category: {{category}} </h2>
+    
+
+    {% for auction in auctionscat %}
+    {% if auction.active %}
+    <hr>
+    <li><a href="{% url 'auction' auction.title %}"> {{ auction.title }}</a>
+        {% if auction.image %}
+        <div>
+            <img src="{{ auction.image }}" alt="{{ auction.title }}" height="200">
+        </div>
+        {% endif %}                 
+        <div>
+            {{ auction.description }}
+        </div>
+        <div>
+            Price: {{ auction.price }}
+        </li>
+    {% endif %}
+    {% endfor %}
+
+    
+{% endblock %}

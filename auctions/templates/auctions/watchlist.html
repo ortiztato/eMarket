@@ -1,0 +1,22 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Listings Watchlist</h2>
+    Hi {{user}} this are your auctions you are interested on 
+    {% for auction in watchauctions %}
+    <hr>
+    <li><a href="{% url 'auction' auction.title %}"> {{ auction.title }}</a>
+        {% if auction.image %}
+        <div>
+            <img src="{{ auction.image }}" alt="{{ auction.title }}" height="200">
+        </div>
+        {% endif %}                 
+        <div>
+            {{ auction.description }}
+        </div>
+        <div>
+            Price: {{ auction.price }}
+        </li>
+    {% endfor %}
+    
+{% endblock %}

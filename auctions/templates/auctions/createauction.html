@@ -1,0 +1,41 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Create Listings</h2>
+    <div>
+        {% if user.is_authenticated %}
+        <form action="{% url 'fromcreate' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input class="form-control" autofocus type="text" name="title" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="bodyauction" placeholder="Description">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="url" name="image" placeholder="Place Image URL">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="number" name="bid" placeholder="Place Initial Bid">
+            </div>
+            <div style="height:40px;">
+                <select name="category">
+                    {% for category in categories %}
+                        <option value="{{ category.categorytype }}">{{ category.categorytype }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Create Auction">
+            <div>
+
+            </div>
+
+
+        </form>
+        {% else %}
+            <div>need to sign in to create an auction.</div> 
+
+           <div>Already have an account? <a href="{% url 'login' %}">Log In here.</a></div> 
+        {% endif %}
+    </div>
+{% endblock %}
