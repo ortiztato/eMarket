@@ -26,8 +26,6 @@
     color: var(--primary-color);
   }
   
-  .logo img {
-  }
   
   /* Menu */
   .menu {
@@ -69,7 +67,7 @@
   }
   
   .menu a:hover {
-    color: var(--primary-color);
+    color: rgb(24, 61, 141);
   }
   
   .open-menu,

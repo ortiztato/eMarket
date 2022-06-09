@@ -1,8 +1,9 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
+<section class="watchlistsection">
     <h2>Listings Watchlist</h2>
-    Hi {{user}} this are your auctions you are interested on 
+    Hi <strong>{{user}}</strong> this are your auctions you are interested on 
     {% for auction in watchauctions %}
     <hr>
     <li><a href="{% url 'auction' auction.title %}"> {{ auction.title }}</a>
@@ -18,5 +19,7 @@
             Price: {{ auction.price }}
         </li>
     {% endfor %}
+</section>
+    
     
 {% endblock %}

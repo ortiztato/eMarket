@@ -217,3 +217,28 @@
 
 /* INDEX BY CATEGORIES TEMPLATE */
 
+/* WATCHLIST TEMPLATE  */
+
+.watchlistsection{
+    margin-left: 10px;
+}
+
+/* FOOTER */
+
+footer{
+    background-color: rgb(230,230,230);
+}
+
+footer p{
+    font-size: 12px;
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+}
+
+footer .container{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
