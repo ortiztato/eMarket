@@ -3,42 +3,42 @@
 
 {% block body %}
 <section id="secauction">
-    <div class="containerauction">
-        <h2>{{ auction.title }}</h2>
-    
-        <hr>
+    <div class="secauction-container">
+        <h2 class="secauction-container-titulo">{{ auction.title }}</h2>
             {% if auction.image %}
-                <div class="divimageauction">
+                <div class="secauction-container-img">
                 <img src="{{ auction.image }}" alt="{{ auction.title }}">
                 </div>
-            {% endif %}                 
-        <div id="auctiondescription">
-            Description: {{ auction.description }}
-        </div>
-        <div id="auctioncategory">
-            Category: {{ auction.category }}
-        </div>
-        <div id="auctioninitbid">
-            Initial Bid: $ {{ auction.initialbid}}
-        </div>
-        <div id="auctionprice">
-            Current Bid: $ {{ auction.price}}
-        </div>
-        <hr>
-        {% if watch %}
-        <div class="watchlist"> 
-            <button>
-                <a href="{% url 'changewatch' auction.title %}">Remove from Watchlist</a>
-            </button>
-            
-        </div>
-        {% else %}
-        <div class="watchlist"> 
-            <button>
-                <a href="{% url 'changewatch' auction.title %}">Add to Watchlist</a>
-            </button>
-        </div>
-        {% endif %}
+            {% endif %}
+        <div class="secaution-container-text">
+            <p class="secauction-container-description">
+                Description: {{ auction.description }}
+            </p>
+            <p class="secauction-container-category">
+                Category: {{ auction.category }}
+            </p>
+            <p class="secauction-container-initbid">
+                Initial Bid: $ {{ auction.initialbid}}
+            </p>
+            <p class="secauction-container-price">
+                Current Bid: $ {{ auction.price}}
+            </p>
+            {% if watch %}
+            <div class="secauction-container-watchlist"> 
+                <button>
+                    <a href="{% url 'changewatch' auction.title %}">Remove from Watchlist</a>
+                </button>
+                
+            </div>
+            {% else %}
+            <div class="secauction-container-watchlist"> 
+                <button>
+                    <a href="{% url 'changewatch' auction.title %}">Add to Watchlist</a>
+                </button>
+            </div>
+            {% endif %}
+        </div>                 
+        
 
 
         <div>
@@ -74,7 +74,7 @@
                 {% endif %}
 
             {% else %}
-                You need to <a href="{% url 'login' %}">Log In</a> to place a bid, a comment or to add it to your watchlist.
+                You need to <a id="alogin" href="{% url 'login' %}">Log In</a> to place a bid, a comment or to add it to your watchlist.
             {% endif %}
             
         <hr>
