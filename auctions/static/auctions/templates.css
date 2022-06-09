@@ -93,25 +93,62 @@
     margin
 }
 
-.secauction-container-description{font-size:20px; margin-top: 0px; margin-bottom: 0px;}
-.secauction-container-category{font-size: 18px; margin-top: 0px; margin-bottom: 0px;}
-.secauction-container-initbid{font-size: 16px; margin-top: 0px; margin-bottom: 0px;color: rgb(162, 164, 163);}
-.secauction-container-price{font-size: 20px; margin-top: 0px; margin-bottom: 0px; color: rgb(4, 177, 85);}
+.secauction-container-description{font-size: 20px; margin-top: 0px; margin-bottom: 0px;}
+.secauction-container-category{font-size: 16px; margin-top: 0px; margin-bottom: 0px;}
+.secauction-container-initbid{font-size: 16px; margin-top: 10px; margin-bottom: 0px;color: rgb(162, 164, 163);}
+.secauction-container-price{font-size: 20px; margin-top: 0px; margin-bottom: 10px; color: rgb(4, 177, 85);}
 
 .secauction-container-watchlist a{
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 550;
     color: white;
     text-decoration: none;
     margin: 1px;
 }
 
 .secauction-container-watchlist button{
-    padding: 10px 30px;
+    padding: 0.5em 1em;
     border-radius: 5px;
-    border: 2px solid rgba(0,0,0,0.3);
+    border: 0px solid rgba(0,0,0,0.3);
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     color: white;
-    background-color: rgb(43, 86, 226);
+    background-color: rgb(49, 94, 240);
     margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.placebidsection{
+    margin-left: 10px;
+}
+
+.formplacebid input{
+    margin: 2px 0px;
+}
+
+.commentsection{
+    margin-left: 10px;
+}
+
+.bidinput{
+    width: 130px;
+}
+
+.inputcloseauction {
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: 0px solid rgba(0,0,0,0.3);
+    /* box-shadow: 1px 1px 10px rgba(0,0,0,0.5); */
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 550;
+    text-decoration: none;
+    background-color: rgb(190, 190, 190);
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.placecommentinput{
+    margin-top: 5px;
+    width: 90%;
 }
