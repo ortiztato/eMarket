@@ -1,34 +1,33 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
+<section class="createlistings">
+
     <h2>Create Listings</h2>
     <div>
         {% if user.is_authenticated %}
         <form action="{% url 'fromcreate' %}" method="post">
             {% csrf_token %}
-            <div class="form-group">
-                <input class="form-control" autofocus type="text" name="title" placeholder="Title">
+            <div>
+                <input autofocus type="text" name="title" placeholder="Title">
             </div>
-            <div class="form-group">
-                <input class="form-control" type="text" name="bodyauction" placeholder="Description">
+            <div>
+                <input class="inputlarge" type="text" name="bodyauction" placeholder="Description">
             </div>
-            <div class="form-group">
-                <input class="form-control" type="url" name="image" placeholder="Place Image URL">
+            <div>
+                <input class="inputlarge" type="url" name="image" placeholder="Place Image URL">
             </div>
-            <div class="form-group">
-                <input class="form-control" type="number" name="bid" placeholder="Place Initial Bid">
+            <div>
+                <input type="number" name="bid" placeholder="Place Initial Bid">
             </div>
-            <div style="height:40px;">
+            <div>
                 <select name="category">
                     {% for category in categories %}
                         <option value="{{ category.categorytype }}">{{ category.categorytype }}</option>
                     {% endfor %}
                 </select>
             </div>
-            <input class="btn btn-primary" type="submit" value="Create Auction">
-            <div>
-
-            </div>
+            <input class="inputcloseauction" type="submit" value="Create Auction">
 
 
         </form>
@@ -38,4 +37,7 @@
            <div>Already have an account? <a href="{% url 'login' %}">Log In here.</a></div> 
         {% endif %}
     </div>
+
+</section>
+    
 {% endblock %}

@@ -70,7 +70,7 @@
                         <div>
                             <input  class="bidinput" type="number" required min="{{ auction.price}}" name="bid" placeholder="Place Bid">
                         </div>
-                        <input type="submit" value="Submit">
+                        <input class="inputcloseauction" type="submit" value="Submit">
                     </form>
                     {% else %}
                         {% if user == auction.pricebidder %}
@@ -103,7 +103,7 @@
                 <div style="margin-top: 20px;">place a comment!</div>
                 <form action="{% url 'comment' auction.title %}" method="post">
                     {% csrf_token %}
-                    <div class="form-group">
+                    <div>
                         <input class="placecommentinput" type="text" rows="5" name="comment" placeholder="Place your comment here">
                     </div>
                     <input class="inputcloseauction" type="submit" value="Comment">
