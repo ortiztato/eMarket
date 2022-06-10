@@ -3,8 +3,8 @@
 {% block body %}
 
 <section class="activelistingsdisplay">
+    <h2>Auctions for category: {{category}}</h2>
     <div class="container">
-        <h2>Auctions for category: {{category}}</h2>
     
         {% for auction in auctionscat %}
             {% if auction.active %}

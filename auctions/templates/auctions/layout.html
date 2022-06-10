@@ -33,11 +33,13 @@
                         <img src="{% static "media/close-icon.svg" %}" alt="cerrar menú" />
                     </button>
                     {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link fw-bolder" id="nametitle"><strong>{{user.username}}</strong></a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bolder" id="nametitle"><strong>{{user.username}}</strong></a>
+                    </li>
                     {% else %}
+                    <li class="nav-item">
                     <a class="nav-link fw-bolder"><strong>Not signed in.</strong></a>
+                    </li>
                     {% endif %}
                     <li class="nav-item">
                     <a href="{% url 'index' %}" class="nav-link fw-bolder" id="allposts">Active Listings</a>
@@ -71,7 +73,7 @@
         
 
         <section id="bodysection">
-            <div id="divbody">
+            <div class="divbody">
                 {% block body %}
                 {% endblock %}  
             </div>
