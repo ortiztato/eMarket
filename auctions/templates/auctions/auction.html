@@ -32,11 +32,18 @@
                 
             </div>
             {% else %}
-            <div class="secauction-container-watchlist"> 
-                <button>
-                    <a href="{% url 'changewatch' auction.title %}">Add to Watchlist</a>
-                </button>
-            </div>
+                {% if user.is_authenticated %}
+                <div class="secauction-container-watchlist"> 
+                    <button>
+                        <a href="{% url 'changewatch' auction.title %}">Add to Watchlist</a>
+                    </button>
+                </div>
+                {% else %}
+                <div class="secauction-container-watchlist"> 
+                    <button onclick="alertlogin()">Add to Watchlist
+                    </button>
+                </div>
+                {% endif %}
             {% endif %}
 
               

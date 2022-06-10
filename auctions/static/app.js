@@ -8,3 +8,5 @@ function toggleMenu() {
 
 openMenuBtn.addEventListener("click", toggleMenu);
 closeMenuBtn.addEventListener("click", toggleMenu);
+
+function alertlogin () {alert ("You need to sign in first")}
