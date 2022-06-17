@@ -3,19 +3,19 @@
 {% block body %}
 <section class="categoriessection">
     <h2>Categories</h2>
-    
+
     <ul>
         {% for category in categories %}
-        
+
         <li>
-            <a href="{% url 'category' category.categorytype %}"> {{ category.categorytype}}</a>
+            🔥<a class="acategory" href="{% url 'category' category.categorytype %}"> {{ category.categorytype}} </a>🔥
         </li>
 
         {% endfor %}
-        
+
     </ul>
 
 </section>
-    
-    
+
+
 {% endblock %}
